@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700&amp;family=Manrope:wght@300&amp;family=Space+Grotesk:wght@500&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#149ad7",
+              "secondary-container": "#72351e",
+              "secondary-fixed": "#ffdbcf",
+              "primary-fixed": "#ffdbcf",
+              "surface-bright": "#3a3939",
+              "on-background": "#e5e2e1",
+              "surface-container-lowest": "#0e0e0e",
+              "primary-fixed-dim": "#ffb59a",
+              "on-tertiary": "#00344d",
+              "on-secondary-container": "#f5a081",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#72351e",
+              "on-tertiary-fixed": "#001e2e",
+              "on-secondary": "#55200a",
+              "surface-variant": "#353534",
+              "on-error": "#690005",
+              "tertiary": "#87ceff",
+              "on-surface-variant": "#e0bfb4",
+              "on-secondary-fixed": "#380d00",
+              "background": "#131313",
+              "error": "#ffb4ab",
+              "tertiary-fixed": "#c8e6ff",
+              "surface-container-highest": "#353534",
+              "primary-container": "#E8622A",
+              "inverse-surface": "#e5e2e1",
+              "on-tertiary-container": "#002d43",
+              "surface-container": "#201f1f",
+              "on-error-container": "#ffdad6",
+              "surface-container-high": "#2a2a2a",
+              "error-container": "#93000a",
+              "secondary": "#ffb59a",
+              "on-primary-fixed": "#380d00",
+              "on-tertiary-fixed-variant": "#004c6d",
+              "tertiary-fixed-dim": "#87ceff",
+              "surface": "#131313",
+              "on-primary-container": "#ffffff",
+              "inverse-on-surface": "#313030",
+              "secondary-fixed-dim": "#ffb59a",
+              "surface-tint": "#ffb59a",
+              "outline": "#a88a80",
+              "surface-container-low": "#1c1b1b",
+              "primary": "#E8622A",
+              "outline-variant": "#594139",
+              "inverse-primary": "#a83900",
+              "on-surface": "#e5e2e1",
+              "surface-dim": "#131313",
+              "on-primary-fixed-variant": "#812900"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background: #131313;
+            background-image: radial-gradient(circle at top right, #2a1a14, #131313);
+            -webkit-tap-highlight-color: transparent;
+            min-height: 100vh;
+            max-width: 390px;
+            margin: 0 auto;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    
+        .shadow-premium-orange {
+            box-shadow: 0 12px 30px -4px rgba(232, 98, 42, 0.45);
+        }
+        
+        .shadow-premium-card {
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body class="text-on-surface font-body min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full max-w-[390px] z-50 bg-transparent flex items-center px-6 h-16">
+<button class="text-on-surface hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex-1"></div>
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full border border-white/10 overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvyfgsuB3hz_Z2d7Y93stimp2y5gBwGoHj-T47vs7kb8imK28zsXYuFMNDB0kjaZg1ZcDhco2fZSUA2tNDHThWaCmNyIQ7uPbNnRJZDM58pRzchLMK5vVb0u9Z2veSrLO66rNb2c10jkUlhghzWtQvooamMi2-40jz_jfAq2GvbF7EBR3Po7DkqKBfmLNufozj6LFo8WvnciCPQJ0-YtWNHa7RiWOLzEwtBRwVHDtTFJRPml4Hhj-0YC_eCJr4W2euAbSHVoAhtR0"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 space-y-8 pb-12">
+<!-- New Hero Section -->
+<section class="space-y-4">
+<h1 class="font-headline text-5xl font-bold text-white tracking-tight leading-tight">今天吃什么</h1>
+<p class="text-on-surface-variant/80 text-base leading-relaxed font-light">
+                为您精心策划的今日膳食指南。<br/>艺术感与味觉的深度交织。
+            </p>
+</section>
+<!-- Date Switcher -->
+<div class="flex justify-center">
+<div class="glass-panel rounded-full p-1.5 flex items-center gap-1 w-full shadow-premium-card">
+<button class="flex-1 py-2.5 rounded-full text-sm font-medium transition-all bg-[#E8622A] text-white shadow-premium-orange">今天</button>
+<button class="flex-1 py-2.5 rounded-full text-sm font-medium transition-all text-on-surface-variant hover:text-on-surface">明天</button>
+<button class="flex-1 py-2.5 rounded-full text-sm font-medium transition-all text-on-surface-variant hover:text-on-surface">周末</button>
+</div>
+</div>
+<!-- Meal Cards Container -->
+<div class="space-y-6">
+<!-- Breakfast Card -->
+<div class="glass-panel rounded-xl overflow-hidden h-40 flex group cursor-pointer hover:bg-white/10 transition-colors shadow-premium-card">
+<div class="w-[38%] h-full shrink-0">
+<img alt="Breakfast" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqO8KclYXWfIwfwPjtT-oIPZN0ISX_0UF6obMreCHejAtRdYv4MQo7l7si2MDLnwjRnBctfb4EArcmeUHjoEakN4YEmuJCeoM9EVY8pFyQlBS2wdZmnxQKcYWegoj1qKAsYKL2g0cJcUkNr6FV-_b_ZdTsdYCd4L_kuoV38gUS1-Gg6WU4CW-M9YWANOBYnLRhsmsteZPsMc5cKRxSupJGmX2RV0l38V1NUxTzSMI1g2ZG51uQejZOv8SXjti-SFTMDU2xxDKlLQw"/>
+</div>
+<div class="flex-1 p-5 flex flex-col justify-between">
+<div>
+<span class="text-[10px] text-[#E8622A] tracking-widest font-label uppercase">Breakfast</span>
+<h3 class="font-headline text-xl text-on-surface mt-1">蓝莓松饼</h3>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-[10px] px-2 py-0.5 border border-white/10 bg-white/5 text-on-surface-variant rounded-sm">自己做</span>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-xl">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Lunch Card -->
+<div class="glass-panel rounded-xl overflow-hidden h-40 flex group cursor-pointer hover:bg-white/10 transition-colors shadow-premium-card">
+<div class="w-[38%] h-full shrink-0">
+<img alt="Lunch" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWjNQK1F9TzULBC7jmw1AC6FFfWyvjSKi006ODJbnTObaptGudea_869o-Q7wF6Ijk1sIqa5l5AqS5lFMfys6HXZ5YRr_V8_3gZKhSN1AVdj7vLi8F3ajttolsSoi-b8vLpQ0nVWQrWUZCXMYAP7vU6HF_NJm_RfXsYj2T49sZKLj2Fkk_vU4dgfShXTvLYeIvCxPkD708BPhv-mtkvhtrnM_BiLYTPc3TqPxJ-7GowaomvrHASFiGjPIREO1PqpSWDPqDuN2gu5g"/>
+</div>
+<div class="flex-1 p-5 flex flex-col justify-between">
+<div>
+<span class="text-[10px] text-[#E8622A] tracking-widest font-label uppercase">Lunch</span>
+<h3 class="font-headline text-xl text-on-surface mt-1">三文鱼能量碗</h3>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-[10px] px-2 py-0.5 border border-white/10 bg-white/5 text-on-surface-variant rounded-sm">自己做</span>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-xl">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Unplanned Dinner Card -->
+<div class="glass-panel rounded-xl h-40 border-2 border-dashed border-white/10 flex flex-col items-center justify-center gap-2 group cursor-pointer hover:border-[#E8622A]/40 transition-all shadow-premium-card">
+<div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-on-surface-variant/40 group-hover:text-[#E8622A] group-hover:border-[#E8622A]/20 transition-colors">
+<span class="material-symbols-outlined text-2xl">add</span>
+</div>
+<span class="text-on-surface-variant/60 text-sm font-light tracking-wide">+ 点击选择晚餐</span>
+</div>
+</div>
+<!-- Promotional Elements -->
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-panel p-5 rounded-xl flex flex-col justify-between h-36 shadow-premium-card">
+<div>
+<span class="text-[10px] font-label text-[#E8622A] tracking-wider uppercase">Recipes</span>
+<p class="text-sm font-light mt-2 leading-relaxed">浏览最新<br/>春季时令菜单</p>
+</div>
+<div class="flex justify-end">
+<span class="material-symbols-outlined text-[#E8622A]">chevron_right</span>
+</div>
+</div>
+<div class="glass-panel p-5 rounded-xl flex flex-col justify-between h-36 shadow-premium-card">
+<div>
+<span class="text-[10px] font-label text-[#E8622A] tracking-wider uppercase">Planning</span>
+<p class="text-sm font-light mt-2 leading-relaxed">下周饮食<br/>计划已生成</p>
+</div>
+<div class="flex justify-end">
+<span class="material-symbols-outlined text-[#E8622A]">calendar_today</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>

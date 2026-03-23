@@ -1,0 +1,14 @@
+﻿node_modules/
+dist/
+.env.local
+*.tsbuildinfo
+
+# Generated config artifacts
+tailwind.config.js
+tailwind.config.d.ts
+vite.config.js
+vite.config.d.ts
+
+# Local assistant artifacts
+SESSION_HANDOFF.md
+skills/

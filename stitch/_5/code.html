@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700&amp;family=Manrope:wght@300;400&amp;family=Space+Grotesk:wght@500&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#149ad7",
+              "secondary-container": "#72351e",
+              "secondary-fixed": "#ffdbcf",
+              "primary-fixed": "#ffdbcf",
+              "surface-bright": "#3a3939",
+              "on-background": "#e5e2e1",
+              "surface-container-lowest": "#0e0e0e",
+              "primary-fixed-dim": "#ffb59a",
+              "on-tertiary": "#00344d",
+              "on-secondary-container": "#f5a081",
+              "on-primary": "#5b1b00",
+              "on-secondary-fixed-variant": "#72351e",
+              "on-tertiary-fixed": "#001e2e",
+              "on-secondary": "#55200a",
+              "surface-variant": "#353534",
+              "on-error": "#690005",
+              "tertiary": "#87ceff",
+              "on-surface-variant": "#e0bfb4",
+              "on-secondary-fixed": "#380d00",
+              "background": "#131313",
+              "error": "#ffb4ab",
+              "tertiary-fixed": "#c8e6ff",
+              "surface-container-highest": "#353534",
+              "primary-container": "#ef672e",
+              "inverse-surface": "#e5e2e1",
+              "on-tertiary-container": "#002d43",
+              "surface-container": "#201f1f",
+              "on-error-container": "#ffdad6",
+              "surface-container-high": "#2a2a2a",
+              "error-container": "#93000a",
+              "secondary": "#ffb59a",
+              "on-primary-fixed": "#380d00",
+              "on-tertiary-fixed-variant": "#004c6d",
+              "tertiary-fixed-dim": "#87ceff",
+              "surface": "#131313",
+              "on-primary-container": "#501600",
+              "inverse-on-surface": "#313030",
+              "secondary-fixed-dim": "#ffb59a",
+              "surface-tint": "#ffb59a",
+              "outline": "#a88a80",
+              "surface-container-low": "#1c1b1b",
+              "primary": "#ffb59a",
+              "outline-variant": "#594139",
+              "inverse-primary": "#a83900",
+              "on-surface": "#e5e2e1",
+              "surface-dim": "#131313",
+              "on-primary-fixed-variant": "#812900"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background: radial-gradient(circle at top right, #2a1a14, #131313);
+            -webkit-tap-highlight-color: transparent;
+            min-height: 100vh;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Custom deep shadow for premium feel */
+        .premium-shadow {
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 10px 20px -12px rgba(0, 0, 0, 0.7);
+        }
+        .accent-shadow {
+            box-shadow: 0 12px 24px -6px rgba(45, 18, 5, 0.8), 0 0 15px rgba(232, 98, 42, 0.2);
+        }
+    </style>
+</head>
+<body class="text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-panel border-b border-white/10 flex justify-between items-center px-6 h-16">
+<button class="text-[#E5E2E1]/60 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-bold text-[#E8622A] tracking-tight font-headline">餐计划</h1>
+<button class="text-[#E5E2E1]/60 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</header>
+<main class="pt-24 pb-12 px-5 max-w-md mx-auto">
+<!-- Date Selector -->
+<section class="mb-10">
+<div class="flex overflow-x-auto hide-scrollbar gap-4 py-2">
+<div class="flex flex-col items-center min-w-[54px] opacity-40">
+<span class="font-label text-xs mb-2">周一</span>
+<span class="w-10 h-10 flex items-center justify-center font-label text-lg">20</span>
+</div>
+<div class="flex flex-col items-center min-w-[54px] opacity-40">
+<span class="font-label text-xs mb-2">周二</span>
+<span class="w-10 h-10 flex items-center justify-center font-label text-lg">21</span>
+</div>
+<div class="flex flex-col items-center min-w-[54px] opacity-40">
+<span class="font-label text-xs mb-2">周三</span>
+<span class="w-10 h-10 flex items-center justify-center font-label text-lg">22</span>
+</div>
+<!-- Active Date -->
+<div class="flex flex-col items-center min-w-[54px]">
+<span class="font-label text-xs mb-2 text-[#E8622A]">周四</span>
+<span class="w-10 h-10 rounded-full bg-[#E8622A] text-on-primary flex items-center justify-center font-label text-lg accent-shadow">23</span>
+</div>
+<div class="flex flex-col items-center min-w-[54px] opacity-40">
+<span class="font-label text-xs mb-2">周五</span>
+<span class="w-10 h-10 flex items-center justify-center font-label text-lg">24</span>
+</div>
+<div class="flex flex-col items-center min-w-[54px] opacity-40">
+<span class="font-label text-xs mb-2">周六</span>
+<span class="w-10 h-10 flex items-center justify-center font-label text-lg">25</span>
+</div>
+<div class="flex flex-col items-center min-w-[54px] opacity-40">
+<span class="font-label text-xs mb-2">周日</span>
+<span class="w-10 h-10 flex items-center justify-center font-label text-lg">26</span>
+</div>
+</div>
+</section>
+<!-- Meal Slots -->
+<div class="space-y-8">
+<!-- Breakfast Slot -->
+<div>
+<div class="flex items-center justify-between mb-3 px-1">
+<h2 class="font-headline text-2xl font-bold tracking-tight text-on-surface">早餐</h2>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest opacity-60">07:00 - 09:00</span>
+</div>
+<div class="glass-panel rounded-lg p-4 flex items-center gap-4 transition-all duration-300 hover:bg-white/10 premium-shadow">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img alt="全麦牛油果烘蛋" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSXHuL6-TR8b72J8yeq1qendoCVg5lU3vMNGRCRAbLxlQ3StcW_0YmAdjI2PLnG8uTJlHy0HbBDTWLcDi_hbqGffTr3ZrbQti0dfUWNpr5EG-jbLhCmHpuNCEhNwmjIKTTUKMrVsEaUqfkKaYC0c_O7-Ao2GhwHQB2DNb2tDOUZOYIdmyrb1-6UYuxobCrYcVssCgLWAbssqzLuBYH0xxWJNXnct2FzRkjWXeQL9drlszLVZZXnBiDOKkxdH8yXjzLHYoeKVAK7AY"/>
+</div>
+<div class="flex-1">
+<h3 class="font-headline font-bold text-lg text-on-surface">全麦牛油果烘蛋</h3>
+<div class="flex gap-1 mt-1">
+<span class="inline-block px-1.5 py-0.5 rounded-sm bg-white/5 border border-white/10 font-label text-[10px] text-[#E8622A]">轻食主义</span>
+</div>
+</div>
+<button class="text-[#E8622A] font-body text-sm font-medium pr-2 active:scale-95 transition-transform drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">更换</button>
+</div>
+</div>
+<!-- Lunch Slot -->
+<div>
+<div class="flex items-center justify-between mb-3 px-1">
+<h2 class="font-headline text-2xl font-bold tracking-tight text-on-surface">午餐</h2>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest opacity-60">12:00 - 14:00</span>
+</div>
+<div class="glass-panel rounded-lg p-4 flex items-center gap-4 transition-all duration-300 hover:bg-white/10 premium-shadow">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img alt="香煎三文鱼波奇饭" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvWK-DKz4ggsbJqavXzVsrEDPlQYkdjOaMOVMDOZCXCHaHEOslH31DthORRZXkTyVba7Igo-tIKZzBN-zfsEXVQAgaVjQC0tvq3RVi1xRXyD1Y-uPwlio8e7Wb0BEme73cnRof3H4-qDqyMr0Q59Pt8sIaYS-CQXV9Kbebw9WW9-8b1b1F_lm3a8yf4LMxBmibqTtT12ROMc6_-7pfRUH-qKnPIn28ryoswzEy1LU35L4IA997XomYRCGqTxjjKkIAAvOP1K_0mRs"/>
+</div>
+<div class="flex-1">
+<h3 class="font-headline font-bold text-lg text-on-surface">香煎三文鱼波奇饭</h3>
+<div class="flex gap-1 mt-1">
+<span class="inline-block px-1.5 py-0.5 rounded-sm bg-white/5 border border-white/10 font-label text-[10px] text-[#E8622A]">高蛋白</span>
+</div>
+</div>
+<button class="text-[#E8622A] font-body text-sm font-medium pr-2 active:scale-95 transition-transform drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">更换</button>
+</div>
+</div>
+<!-- Dinner Slot (Empty) -->
+<div>
+<div class="flex items-center justify-between mb-3 px-1">
+<h2 class="font-headline text-2xl font-bold tracking-tight text-on-surface">晚餐</h2>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest opacity-60">18:00 - 20:00</span>
+</div>
+<button class="w-full h-[100px] rounded-lg border-2 border-dashed border-white/10 glass-panel flex flex-col items-center justify-center gap-2 transition-all hover:bg-white/10 active:scale-[0.98] premium-shadow">
+<span class="material-symbols-outlined text-[#E8622A] scale-125 drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]" data-icon="add_circle">add_circle</span>
+<span class="font-body text-sm text-on-surface-variant">选择菜品</span>
+</button>
+</div>
+</div>
+</main>
+</body></html>

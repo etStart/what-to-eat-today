@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700&amp;family=Manrope:wght@300;400&amp;family=Space+Grotesk:wght@500&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#149ad7",
+              "secondary-container": "#72351e",
+              "secondary-fixed": "#ffdbcf",
+              "primary-fixed": "#ffdbcf",
+              "surface-bright": "#3a3939",
+              "on-background": "#e5e2e1",
+              "surface-container-lowest": "#0e0e0e",
+              "primary-fixed-dim": "#ffb59a",
+              "on-tertiary": "#00344d",
+              "on-secondary-container": "#f5a081",
+              "on-primary": "#5b1b00",
+              "on-secondary-fixed-variant": "#72351e",
+              "on-tertiary-fixed": "#001e2e",
+              "on-secondary": "#55200a",
+              "surface-variant": "#353534",
+              "on-error": "#690005",
+              "tertiary": "#87ceff",
+              "on-surface-variant": "#e0bfb4",
+              "on-secondary-fixed": "#380d00",
+              "background": "#131313",
+              "error": "#ffb4ab",
+              "tertiary-fixed": "#c8e6ff",
+              "surface-container-highest": "#353534",
+              "primary-container": "#ef672e",
+              "inverse-surface": "#e5e2e1",
+              "on-tertiary-container": "#002d43",
+              "surface-container": "#201f1f",
+              "on-error-container": "#ffdad6",
+              "surface-container-high": "#2a2a2a",
+              "error-container": "#93000a",
+              "secondary": "#ffb59a",
+              "on-primary-fixed": "#380d00",
+              "on-tertiary-fixed-variant": "#004c6d",
+              "tertiary-fixed-dim": "#87ceff",
+              "surface": "#131313",
+              "on-primary-container": "#501600",
+              "inverse-on-surface": "#313030",
+              "secondary-fixed-dim": "#ffb59a",
+              "surface-tint": "#ffb59a",
+              "outline": "#a88a80",
+              "surface-container-low": "#1c1b1b",
+              "primary": "#ffb59a",
+              "outline-variant": "#594139",
+              "inverse-primary": "#a83900",
+              "on-surface": "#e5e2e1",
+              "surface-dim": "#131313",
+              "on-primary-fixed-variant": "#812900"
+            },
+            fontFamily: {
+              "headline": ["Epilogue"],
+              "body": ["Manrope"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background: radial-gradient(circle at top right, #2a1a14, #131313);
+        min-height: 100vh;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.07);
+        backdrop-filter: blur(32px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .underline-input {
+        background-color: transparent !important;
+        border: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 0 !important;
+        transition: all 0.3s ease;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        color: white !important;
+      }
+      .underline-input:focus {
+        outline: none !important;
+        border-bottom-color: #E8622A !important;
+        box-shadow: none !important;
+        background-color: transparent !important;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+</head>
+<body class="font-body text-on-surface pb-12">
+<!-- Top Bar -->
+<header class="fixed top-0 w-full z-50 bg-white/10 dark:bg-black/20 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-6 h-16">
+<button class="text-on-surface/80">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline font-bold text-lg text-[#E8622A]">上传菜谱</h1>
+<div class="w-8 h-8"></div>
+</header>
+<main class="pt-24 px-6 max-w-lg mx-auto space-y-10">
+<!-- Upload Zone -->
+<section>
+<div class="relative w-full aspect-video rounded-xl border-2 border-dashed border-[#E8622A]/60 bg-white/5 backdrop-blur-md flex flex-col items-center justify-center group cursor-pointer hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-4xl text-[#E8622A] mb-2" style="font-variation-settings: 'FILL' 1;">add_a_photo</span>
+<span class="font-body text-sm text-on-surface-variant">点击上传菜的照片</span>
+</div>
+</section>
+<!-- Form Fields -->
+<div class="space-y-8">
+<!-- Dish Name -->
+<div class="space-y-1">
+<label class="font-body text-sm text-on-surface-variant/70">菜名</label>
+<input class="w-full underline-input py-3 text-on-surface placeholder:text-on-surface-variant/30 text-lg" placeholder="比如：番茄炒蛋" type="text"/>
+</div>
+<!-- Type Toggle -->
+<div class="space-y-3">
+<label class="font-body text-sm text-on-surface-variant/70">类型</label>
+<div class="flex p-1.5 glass-panel rounded-full">
+<button class="flex-1 py-2 text-sm font-medium rounded-full bg-[#E8622A] text-white">自己做</button>
+<button class="flex-1 py-2 text-sm font-medium rounded-full text-on-surface-variant/60">外卖</button>
+</div>
+</div>
+<!-- Tags -->
+<div class="space-y-4">
+<label class="font-body text-sm text-on-surface-variant/70">标签</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-5 py-1.5 rounded-full bg-[#E8622A] text-on-primary font-body text-sm">早餐</button>
+<button class="px-5 py-1.5 rounded-full glass-panel text-on-surface-variant font-body text-sm">午餐</button>
+<button class="px-5 py-1.5 rounded-full glass-panel text-on-surface-variant font-body text-sm">晚餐</button>
+<button class="px-5 py-1.5 rounded-full glass-panel text-on-surface-variant font-body text-sm">快手菜</button>
+<button class="px-5 py-1.5 rounded-full glass-panel text-on-surface-variant font-body text-sm">家常菜</button>
+<button class="px-5 py-1.5 rounded-full glass-panel text-on-surface-variant font-body text-sm">健康</button>
+<button class="px-5 py-1.5 rounded-full glass-panel text-on-surface-variant font-body text-sm">下饭</button>
+<button class="px-5 py-1.5 rounded-full glass-panel text-on-surface-variant font-body text-sm">汤类</button>
+</div>
+</div>
+<!-- Introduction -->
+<div class="space-y-1">
+<label class="font-body text-sm text-on-surface-variant/70">简介</label>
+<textarea class="w-full underline-input py-3 text-on-surface placeholder:text-on-surface-variant/30 resize-none text-sm" placeholder="简单描述这道菜..." rows="2"></textarea>
+</div>
+<!-- Steps -->
+<div class="space-y-6">
+<label class="font-body text-sm text-on-surface-variant/70">做法步骤</label>
+<div class="space-y-6">
+<div class="flex gap-4 items-end pb-1">
+<div class="font-headline font-bold text-2xl text-[#E8622A] opacity-50 w-8 mb-2">01</div>
+<div class="flex-1">
+<input class="w-full underline-input py-2 text-on-surface placeholder:text-on-surface-variant/30 text-sm" placeholder="描述第一个步骤" type="text"/>
+</div>
+</div>
+<div class="flex gap-4 items-end pb-1">
+<div class="font-headline font-bold text-2xl text-[#E8622A] opacity-50 w-8 mb-2">02</div>
+<div class="flex-1">
+<input class="w-full underline-input py-2 text-on-surface placeholder:text-on-surface-variant/30 text-sm" placeholder="描述第二个步骤" type="text"/>
+</div>
+</div>
+</div>
+<button class="w-full py-4 border border-white/10 rounded-full flex items-center justify-center gap-2 text-sm text-[#E8622A] font-medium bg-white/5 hover:bg-white/10 transition-colors mt-4">
+<span class="material-symbols-outlined text-lg">add</span>
+                    添加步骤
+                </button>
+</div>
+</div>
+<!-- Save Action Button -->
+<div class="pt-12 pb-16">
+<button class="w-full py-4 rounded-full bg-[#E8622A] text-white font-headline font-bold text-lg hover:opacity-90 active:scale-95 transition-all" style="box-shadow: 0 10px 30px -5px rgba(232, 98, 42, 0.5);">
+                保存菜谱
+            </button>
+</div>
+</main>
+</body></html>
