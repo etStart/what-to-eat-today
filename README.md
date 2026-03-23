@@ -37,6 +37,47 @@ npm run dev
 http://localhost:5173
 ```
 
+## 换电脑如何启动
+
+如果你换了一台新电脑，按下面做就能把项目重新跑起来：
+
+### 1. 拉代码
+
+```bash
+git clone https://github.com/etStart/what-to-eat-today.git
+cd what-to-eat-today
+```
+
+### 2. 安装依赖
+
+```bash
+npm install
+```
+
+### 3. 新建 `.env.local`
+
+复制 `.env.example`，然后新建一个 `.env.local` 文件：
+
+```env
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+VITE_SUPABASE_STORAGE_BUCKET=recipe-images
+```
+
+把真实值填进去。
+
+### 4. 启动项目
+
+```bash
+npm run dev
+```
+
+### 5. 打开浏览器
+
+```text
+http://localhost:5173
+```
+
 ## 不配 Supabase 能看什么
 
 如果你还没有配置 `.env.local`，项目也可以启动，适合先看 UI：
@@ -63,6 +104,12 @@ VITE_SUPABASE_STORAGE_BUCKET=recipe-images
 - `VITE_SUPABASE_ANON_KEY`
 
 `VITE_SUPABASE_STORAGE_BUCKET` 默认可以继续使用 `recipe-images`。
+
+说明：
+
+- `.env.local` 不会上传到 GitHub
+- 换电脑后需要你自己重新创建一次
+- 建议把 Supabase 的 URL 和 Publishable key 保存到密码管理器或私密笔记里
 
 ## 数据库与存储
 
