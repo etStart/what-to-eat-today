@@ -25,6 +25,10 @@ export function getTodayIso() {
   return formatISODate(startOfToday());
 }
 
+export function getTomorrowIso() {
+  return formatISODate(addDays(startOfToday(), 1));
+}
+
 export function getMealLabel(mealType: MealType) {
   switch (mealType) {
     case "breakfast":

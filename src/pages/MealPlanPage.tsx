@@ -1,5 +1,5 @@
 ﻿import { useMemo, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { AppShell } from "../components/AppShell";
@@ -16,8 +16,13 @@ export function MealPlanPage() {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const { user } = useAuth();
+  const [searchParams, setSearchParams] = useSearchParams();
   const week = useMemo(() => buildSevenDayRange(new Date()), []);
-  const [selectedDate, setSelectedDate] = useState(week[0].iso);
+  const requestedDate = searchParams.get("date");
+  const selectedDate =
+    requestedDate && week.some((item) => item.iso === requestedDate)
+      ? requestedDate
+      : week[0].iso;
   const [pickerMealType, setPickerMealType] = useState<MealType | null>(null);
   const [actionError, setActionError] = useState("");
 
@@ -89,6 +94,20 @@ export function MealPlanPage() {
       ? recipesQuery.error.message
       : "读取菜谱失败，请稍后再试。";
 
+  const handleSelectDate = (date: string) => {
+    setSearchParams((current) => {
+      const next = new URLSearchParams(current);
+
+      if (date === week[0].iso) {
+        next.delete("date");
+      } else {
+        next.set("date", date);
+      }
+
+      return next;
+    });
+  };
+
   return (
     <AppShell
       subtitle="先把接下来 7 天排好，今天打开首页时就不用再临时想。"
@@ -106,7 +125,7 @@ export function MealPlanPage() {
                     : "border-white/10 bg-white/5 text-text-secondary"
                 }`}
                 key={item.iso}
-                onClick={() => setSelectedDate(item.iso)}
+                onClick={() => handleSelectDate(item.iso)}
                 type="button"
               >
                 <div className="font-label text-xs uppercase tracking-[0.24em]">
